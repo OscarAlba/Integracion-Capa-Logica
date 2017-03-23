@@ -16,9 +16,9 @@
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
         <result property='descripcion' column='descripcion'/>
-        <result property='fechalanzamiento' column='fechalanzamiento'/>
-        <result property='tarifaxdia' column='tarifaxdia'/>
-        <result property='formatorenta' column='formatorenta'/>
+        <result property='fechaLanzamiento' column='fechalanzamiento'/>
+        <result property='tarifaxDia' column='tarifaxdia'/>
+        <result property='formatoRenta' column='formatorenta'/>
         <result property='genero' column='genero'/>
         <association property="tipo" javaType="TipoItem" columnPrefix='TI_' resultMap='edu.eci.pdsw.sampleprj.dao.mybatis.mappers.TipoItemMapper.TipoItemResult'></association>      
     </resultMap>

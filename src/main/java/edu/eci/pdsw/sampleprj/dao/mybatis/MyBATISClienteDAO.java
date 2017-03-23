@@ -25,7 +25,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
             clienteMapper.agregarCliente(client);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
-            throw new PersistenceException("Error al registrar el item "+client.toString(),e);
+            throw new PersistenceException("Error al registrar el Cliente "+client.toString(),e);
         }        
         
     }
@@ -36,7 +36,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
             return clienteMapper.getCliente(id);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
-            throw new PersistenceException("Error al consultar el item "+id,e);
+            throw new PersistenceException("Error al consultar el cliente "+id,e);
         }
     }
 }
