@@ -6,43 +6,38 @@
 package edu.eci.pdsw.sampleprj.dao.mybatis;
 
 import com.google.inject.Inject;
-import edu.eci.pdsw.sampleprj.dao.ItemDAO;
+import edu.eci.pdsw.sampleprj.dao.ClienteDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
-import edu.eci.pdsw.samples.entities.Item;
-import edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ItemMapper;
-
-
+import edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ClienteMapper;
+import edu.eci.pdsw.samples.entities.Cliente;
 
 /**
  *
- * @author hcadavid
+ * @author 2106991
  */
-public class MyBATISItemDAO implements ItemDAO{
-
+public class MyBATISClienteDAO implements ClienteDAO{
     @Inject
-    private ItemMapper itemMapper;    
+    private ClienteMapper clienteMapper;    
         
     @Override
-    public void save(Item it) throws PersistenceException{
+    public void save(Cliente client) throws PersistenceException{
         try{
-            itemMapper.insertarItem(it);
+            clienteMapper.agregarCliente(client);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
-            throw new PersistenceException("Error al registrar el item "+it.toString(),e);
+            throw new PersistenceException("Error al registrar el item "+client.toString(),e);
         }        
         
     }
 
     @Override
-    public Item load(int id) throws PersistenceException {
+    public Cliente load(int id) throws PersistenceException {
         try{
-            return itemMapper.consultarItem(id);
+            return clienteMapper.getCliente(id);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al consultar el item "+id,e);
         }
-        
-        
     }
-    
 }
+  

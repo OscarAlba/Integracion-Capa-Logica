@@ -13,6 +13,8 @@ public interface ClienteMapper {
     
     public Cliente getCliente(@Param("idcli") int id); 
     
+     public void agregarCliente(@Param("cliente")Cliente client);
+    
     /**
      * Registrar un nuevo item rentado asociado al cliente identificado
      * con 'idc' y relacionado con el item identificado con 'idi'
